@@ -43,7 +43,9 @@ export default function useStopWatch(interval:number = 1000) {
     }
 
     const addlap = () => {
-        setLaps(prev => [...prev, current])
+        if (buttonName === "Pause") {
+            setLaps(prev => [...prev, current])
+        }
     }
 
     return {

@@ -11,7 +11,7 @@ function App() {
       <br/>
       {lap}
       <button onClick={pauseOrPlay}>{pausedOrPlaying}</button>
-      { pausedOrPlaying === "Play" && <button onClick={addLap}>Add lap</button>}
+      { pausedOrPlaying === "Pause" && <button onClick={addLap}>Add lap</button>}
       <button onClick={reset}>Reset</button>
     </div>
   );
