@@ -1,24 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import useStopWatch from './stopwatch/stopwatch';
 
 function App() {
+  const { pauseOrPlay, pausedOrPlaying, reset, current } = useStopWatch();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {current}
+      <button onClick={pauseOrPlay}>{pausedOrPlaying}</button>
+      <button onClick={reset}>Reset</button>
     </div>
   );
 }
