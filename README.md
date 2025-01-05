@@ -1,46 +1,52 @@
-# Getting Started with Create React App
+# Stopwatch Custom Hook
+A powerful and reusable custom React hook to implement stopwatch functionality with support for play/pause, reset, lap tracking, and custom tick intervals.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Demo
+A short video demonstrating the custom hook is available [here](https://drive.google.com/file/d/1-QnwAeCBch55YH2D1D-UPGmNiQqseYNe/view?usp=sharing).
 
-## Available Scripts
+## Features
+- Play/Pause: Start or pause the stopwatch.
+- Reset: Reset the stopwatch count to its initial state.
+- Lap Tracking: Record the current count as a lap and maintain a list of recorded laps.
+- Custom Tick Intervals: Allows setting a custom tick interval in milliseconds.
+- Real-Time Updates: Continuously displays the current count.
 
-In the project directory, you can run:
+## Usage
+This custom hook provides an intuitive and straightforward API to manage stopwatch functionality in your React applications.
 
-### `yarn start`
+## Hook API
+- useStopWatch
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Parameters
+- interval (number): The tick interval in milliseconds for updating the stopwatch count.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Returns
+An object with the following properties and methods:
 
-### `yarn test`
+- pauseOrPlay (function): Toggles between starting and pausing the stopwatch.
+- reset (function): Resets the stopwatch count and clears laps.
+- pausedOrPlaying (boolean): Indicates whether the stopwatch is currently paused or playing.
+- current (number): The current count of the stopwatch.
+- addLap (function): Records the current count as a lap.
+- lap (number[]): A list of recorded laps.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Example Output
+- Initial State:
+```
+Current Count: 0s
+Laps: []
+```
 
-### `yarn build`
+- After Starting and Adding Laps:
+```
+Current Count: 25s
+Laps:
+- Lap 1: 10s
+- Lap 2: 20s
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Notes
+This custom hook abstracts away the complexity of managing stopwatch functionality, making it easy to integrate into any React component. Simply call the methods and bind them to your UI controls.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
+This custom hook is open-source and available for both personal and commercial use. Contributions are welcome!
